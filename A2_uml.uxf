@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>130</x>
-      <y>0</y>
+      <x>1310</x>
+      <y>150</y>
       <w>210</w>
       <h>140</h>
     </coordinates>
@@ -22,8 +22,8 @@ lastName:string, birthday:tm)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>210</y>
+      <x>1300</x>
+      <y>360</y>
       <w>240</w>
       <h>280</h>
     </coordinates>
@@ -51,8 +51,8 @@ lastName:string, birthday:tm)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>230</x>
-      <y>130</y>
+      <x>1410</x>
+      <y>280</y>
       <w>30</w>
       <h>100</h>
     </coordinates>
@@ -62,10 +62,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>550</y>
+      <x>1300</x>
+      <y>740</y>
       <w>240</w>
-      <h>280</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>Vitals
 --
@@ -80,6 +80,245 @@ lastName:string, birthday:tm)
 +BT():int
 +BA():int
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>370</y>
+      <w>460</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>PatientManagementSystem
+--
+#_patients:list&lt;Patient*&gt;
+#_patientLookup:map&lt;string, Patient*&gt;
+#_hospitalAlertSystem:unique_ptr&lt;HospitalAlertSystemFacade&gt;
+#_gpNotificationSystem:unique_ptr&lt;GPNotificationSystemFacade&gt;
+#_patientDatabaseLoader:unique_ptr&lt;AbstractPatientDatabaseLoader&gt;
+--
++init():void
++run():void
++addVitalsRecord():void
++printWelcomeMessage():void
++printMainMenu():void
++printPatients():void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>440</y>
+      <w>280</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>AbstractPatientDatabaseLoader
+--
+
+--
++initialiseConnection():void
++loadPatients(patientIn:list&lt;Patirnt*&gt;):void
++closeConnection():void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>650</y>
+      <w>330</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>PatientDatabaseLoader
+--
+
+--
++initialiseConnection():void(override)
++loadPatients(patientIn:list&lt;Patirnt*&gt;):void(override)
++closeConnection():void(override)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>840</y>
+      <w>260</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HosptialNotificationSystemFacade
+--
+
+--
++sendAlertForPatient(p*:Patient):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>970</x>
+      <y>840</y>
+      <w>300</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>GPNotificationSystemFacade
+--
+
+--
++sendGPNotificationForPatient(p*:Patient):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>420</y>
+      <w>140</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>FR3
+Adapter pattern</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>650</y>
+      <w>270</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>PatientFileLoader
+--
+-_file:string
+--
++PatientFileLoader(file:string)
++loadPatients(patientIn:list&lt;Patirnt*&gt;):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1170</x>
+      <y>470</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>470</y>
+      <w>250</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>580</y>
+      <w>140</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>580</y>
+      <w>130</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1410</x>
+      <y>630</y>
+      <w>50</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>530</y>
+      <w>230</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;210.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>530</y>
+      <w>200</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;180.0;70.0;180.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>760</x>
+      <y>950</y>
+      <w>330</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>FR4
+Composite pattern</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>530</x>
+      <y>140</y>
+      <w>330</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>FR1
+Observer pattern</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>530</x>
+      <y>220</y>
+      <w>330</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>FR2
+Strategy pattern</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
