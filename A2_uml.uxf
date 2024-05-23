@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>0</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Person
+--
+#_firstName:string
+#_lastName:string
+#_birthday:tm
+--
++Person(firstName:string, 
+lastName:string, birthday:tm)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>210</y>
+      <w>240</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Patient
+--
+#_diagnosis:list&lt;string&gt;
+#__vitals:list&lt;Vitals&gt;
+#_alertLevel:AlertLevel
+--
++Patient(firstName:string, 
+lastName:string, birthday:tm)
++age():int
++uid():string
++humanReadableID():string
++addDiagnosis(diagnosis:string):void
++primaryDiagnosis():string
++diagnoses():list&lt;string&gt;
++addVitals(v*:Vitals):void
++vitals():list&lt;string&gt;
++setAlertLevel(level:AlertLevel):void
++alertLevel():AlertLevel
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>130</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>550</y>
+      <w>240</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Vitals
+--
+#_heartRate:int
+#_oxygenSaturation:int
+#_bodyTemperature:int
+#_brainActivity:int
+--
++Vitals(hr:int, spo2:int, bt:int, ba:int)
++HR():int
++SPO2():int
++BT():int
++BA():int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
