@@ -25,13 +25,14 @@ lastName:string, birthday:tm)</panel_attributes>
       <x>1250</x>
       <y>470</y>
       <w>430</w>
-      <h>310</h>
+      <h>330</h>
     </coordinates>
     <panel_attributes>Patient
 --
 #_diagnosis:list&lt;string&gt;
 #__vitals:list&lt;Vitals&gt;
 #_alertLevel:AlertLevel
+#_strategy:CalcualteAlertLevelStrategy*
 --
 +Patient(firstName:string, 
 lastName:string, birthday:tm)
@@ -41,11 +42,12 @@ lastName:string, birthday:tm)
 +addDiagnosis(diagnosis:string):void
 +primaryDiagnosis():string
 +diagnoses():list&lt;string&gt;
-+addVitals(v*:Vitals, c:CompositeHighestAlertLevel):void
++addVitals(v*:Vitals):void
 +vitals():list&lt;string&gt;
 +setAlertLevel(level:AlertLevel):void
 +alertLevel():AlertLevel
-+calculateAlertLevel(strategy:CalcualteAlertLevelStrategy*):string
++setCompositeStrategy(s:CalculateAlertLevelStrategy*):void
++calculateAlertLevel(v:Vitals*):string
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -64,7 +66,7 @@ lastName:string, birthday:tm)
     <id>UMLClass</id>
     <coordinates>
       <x>1290</x>
-      <y>850</y>
+      <y>900</y>
       <w>240</w>
       <h>200</h>
     </coordinates>
@@ -245,14 +247,14 @@ Adapter pattern</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1400</x>
-      <y>770</y>
+      <y>790</y>
       <w>50</w>
-      <h>100</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
