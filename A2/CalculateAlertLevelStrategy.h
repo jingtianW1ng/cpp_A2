@@ -2,11 +2,11 @@
 #define CALCULATE_ALERT_LEVEL_STRATEGY_H
 class Vitals;
 
-class CalcualteAlertLevelStrategy
+class CalculateAlertLevelStrategy
 {
 public:
 
-    virtual std::string calcualteAlertLevel(const Vitals* v) = 0;
+    virtual std::string calculateAlertLevel(const Vitals* v) = 0;
 };
 
 
