@@ -1,7 +1,10 @@
 #include "CompositeHighestAlertLevel.h"
+#include "Vitals.h"
+#include "Patient.h"
 
 CompositeHighestAlertLevel::CompositeHighestAlertLevel()
 {
+    alertLevel = AlertLevel::Green;
 }
 
 CompositeHighestAlertLevel::~CompositeHighestAlertLevel()
@@ -21,4 +24,14 @@ void CompositeHighestAlertLevel::addStrategy(CalculateAlertLevelStrategy* strate
 void CompositeHighestAlertLevel::calculateAlertLevel(const Vitals* v, Patient* p)
 {
     //TODO compare muti alert level set alert level to highest one
+    for (const auto& strategie : _strategies)
+    {
+        strategie->calculateAlertLevel(v,p);
+        if (strategie->alertLevel > alertLevel)
+        {
+            alertLevel = strategie->alertLevel;
+        }
+    }
+    //set the highest level to Patient
+    p->setAlertLevel(alertLevel);
 }
