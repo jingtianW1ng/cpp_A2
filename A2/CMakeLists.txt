@@ -15,7 +15,7 @@ add_executable (A2
     "PatientManagementSystem.cpp" "PatientManagementSystem.h"
     "Person.cpp" "Person.h"
     "Vitals.cpp" "Vitals.h"
- "CalculateAlertLevelStrategy.h" "AmogusSusCalculateStrategy.h" "AmogusSusCalculateStrategy.cpp" "ERushCalculateStrategy.h" "ERushCalculateStrategy.cpp" "NocapSyndromeCalculateStrategy.h" "NocapSyndromeCalculateStrategy.cpp")
+ "CalculateAlertLevelStrategy.h" "AmogusSusCalculateStrategy.h" "AmogusSusCalculateStrategy.cpp" "ERushCalculateStrategy.h" "ERushCalculateStrategy.cpp" "NocapSyndromeCalculateStrategy.h" "NocapSyndromeCalculateStrategy.cpp" "TicctoccBrainDamageCalculateStrategy.h" "TicctoccBrainDamageCalculateStrategy.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET A2 PROPERTY CXX_STANDARD 20)
