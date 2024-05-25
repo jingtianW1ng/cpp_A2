@@ -4,6 +4,7 @@
 
 AmogusSusCalculateStrategy::AmogusSusCalculateStrategy()
 {
+    alertLevel = AlertLevel::Green;
 }
 
 void AmogusSusCalculateStrategy::calculateAlertLevel(const Vitals* v, Patient* p)
@@ -13,7 +14,7 @@ void AmogusSusCalculateStrategy::calculateAlertLevel(const Vitals* v, Patient* p
         alertLevel = AlertLevel::Green;
         p->setAlertLevel(alertLevel);
     }
-    else if (200 < v->HR() < 200)
+    else if (200 < v->HR() < 210)
     {
         alertLevel = AlertLevel::Yellow;
         p->setAlertLevel(alertLevel);

@@ -1,5 +1,6 @@
 #ifndef CALCULATE_ALERT_LEVEL_STRATEGY_H
 #define CALCULATE_ALERT_LEVEL_STRATEGY_H
+#include "PatientAlertLevels.h"
 class Vitals;
 class Patient;
 
