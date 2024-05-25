@@ -8,6 +8,7 @@ class CalculateAlertLevelStrategy
 public:
 
     virtual void calculateAlertLevel(const Vitals* v, Patient* p) = 0;
+    AlertLevel alertLevel;
 };
 
 

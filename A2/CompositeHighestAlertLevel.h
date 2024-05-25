@@ -9,7 +9,7 @@ public:
 	CompositeHighestAlertLevel();
 	~CompositeHighestAlertLevel();
 
-	void addStrategy(CalculateAlertLevelStrategy* Strategy);
+	void addStrategy(CalculateAlertLevelStrategy* strategy);
 
 
 	virtual void calculateAlertLevel(const Vitals* v, Patient* p) override;

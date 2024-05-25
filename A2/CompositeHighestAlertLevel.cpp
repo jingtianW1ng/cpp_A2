@@ -13,7 +13,7 @@ CompositeHighestAlertLevel::~CompositeHighestAlertLevel()
     _strategies.clear();
 }
 
-void CompositeHighestAlertLevel::addStrategy(CalculateAlertLevelStrategy* Strategy)
+void CompositeHighestAlertLevel::addStrategy(CalculateAlertLevelStrategy* strategy)
 {
     _strategies.push_back(strategy);
 }
