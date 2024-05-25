@@ -11,6 +11,12 @@
 #include "GPNotificationSystemFacade.h"
 #include "HospitalAlertSystemFacade.h"
 
+#include "AmogusSusCalculateStrategy.h"
+#include "ERushCalculateStrategy.h"
+#include "NocapSyndromeCalculateStrategy.h"
+#include "TicctoccBrainDamageCalculateStrategy.h"
+#include "CompositeHighestAlertLevel.h" 
+
 using namespace std;
 
 
@@ -100,8 +106,40 @@ void PatientManagementSystem::addVitalsRecord()
         cout << "Enter brain activity: ";
         cin >> brainActivity;
 
+        //TODO looping patient's diagnoses to find all dieases
+        auto compStrat = new CompositeHighestAlertLevel();
+        for (const auto& disease : _patientLookup[pid]->diagnoses())
+        {
+            if (disease == "AmogusSus")
+            {
+                auto strat = new AmogusSusCalculateStrategy();
+                compStrat->addStrategy(strat);
+                cout << "AmogusSus" << endl;
+            }
+            else if (disease == "ERush")
+            {
+                auto strat = new ERushCalculateStrategy();
+                compStrat->addStrategy(strat);
+                cout << "ERush" << endl;
+            }
+            else if (disease == "NocapSyndrome")
+            {
+                auto strat = new NocapSyndromeCalculateStrategy();
+                compStrat->addStrategy(strat);
+                cout << "NocapSyndrome" << endl;
+            }
+            else if (disease == "TicctoccBrainDamage")
+            {
+                auto strat = new TicctoccBrainDamageCalculateStrategy();
+                compStrat->addStrategy(strat);
+                cout << "TicctoccBrainDamage" << endl;
+            }
+        }
+        _patientLookup[pid]->setCompositeStrategy(compStrat);
+
         Vitals* v = new Vitals(heartRate, oxygenSaturation, bodyTemperature, brainActivity);
         _patientLookup[pid]->addVitals(v);
+
     }
     else {
         cout << "Patient not found" << endl;
