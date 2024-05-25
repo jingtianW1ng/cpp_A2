@@ -15,7 +15,7 @@ add_executable (A2
     "PatientManagementSystem.cpp" "PatientManagementSystem.h"
     "Person.cpp" "Person.h"
     "Vitals.cpp" "Vitals.h"
-)
+ "CalcualteAlertLevelStrategy.h" "AmogusSusCalcualteStrategy.h" "AmogusSusCalcualteStrategy.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET A2 PROPERTY CXX_STANDARD 20)
