@@ -8,7 +8,7 @@ public:
 	AmogusSusCalculateStrategy();
 
 
-	virtual std::string calculateAlertLevel(const Vitals* v) override;
+	virtual void calculateAlertLevel(const Vitals* v, Patient* p) override;
 
 };
 

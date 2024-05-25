@@ -1,11 +1,11 @@
 #include "AmogusSusCalculateStrategy.h"
 #include "Vitals.h"
+#include "Patient.h"
 
 AmogusSusCalculateStrategy::AmogusSusCalculateStrategy()
 {
 }
 
-std::string AmogusSusCalculateStrategy::calculateAlertLevel(const Vitals* v)
+void AmogusSusCalculateStrategy::calculateAlertLevel(const Vitals* v, Patient* p)
 {
-    return std::string();
 }

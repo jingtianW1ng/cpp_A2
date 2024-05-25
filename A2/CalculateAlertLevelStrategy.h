@@ -1,12 +1,13 @@
 #ifndef CALCULATE_ALERT_LEVEL_STRATEGY_H
 #define CALCULATE_ALERT_LEVEL_STRATEGY_H
 class Vitals;
+class Patient;
 
 class CalculateAlertLevelStrategy
 {
 public:
 
-    virtual std::string calculateAlertLevel(const Vitals* v) = 0;
+    virtual void calculateAlertLevel(const Vitals* v, Patient* p) = 0;
 };
 
 
