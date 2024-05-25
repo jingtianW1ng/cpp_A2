@@ -20,6 +20,7 @@ Patient::Patient(const std::string& firstName, const std::string& lastName, std:
     Person(firstName, lastName, birthday),
     _alertLevel(AlertLevel::Green)
 {
+    _Strategy = new CompositeHighestAlertLevel();
 }
 
 int Patient::age() const
@@ -88,6 +89,7 @@ void Patient::addVitals(const Vitals* v)
 {
     _vitals.push_back(v);
     // TODO: calculate alert levels
+    calculateAlertLevel(v);
 }
 
 const std::vector<const Vitals*> Patient::vitals() const
@@ -114,4 +116,14 @@ void Patient::setAlertLevel(AlertLevel level)
         }
         cout << endl;
     }
+}
+
+void Patient::calculateAlertLevel(const Vitals* v)
+{
+    _Strategy->calculateAlertLevel(v, this);
+}
+
+void Patient::setCompositeStrategy(CalculateAlertLevelStrategy* s)
+{
+    _Strategy = s;
 }

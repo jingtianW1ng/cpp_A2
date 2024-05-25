@@ -1,6 +1,8 @@
 #ifndef PATIENT_H
 #define PATIENT_H
 #include "Person.h"
+#include "CompositeHighestAlertLevel.h"
+#include "CalculateAlertLevelStrategy.h"
 
 #include <vector>
 #include <memory>
@@ -49,7 +51,12 @@ public:
     void setAlertLevel(AlertLevel level);
     const AlertLevel alertLevel() const { return _alertLevel; }
 
+    void calculateAlertLevel(const Vitals*);
+
+    void setCompositeStrategy(CalculateAlertLevelStrategy* s);
+
 protected:
+    CalculateAlertLevelStrategy* _Strategy;
     std::vector<std::string> _diagnosis;
     std::vector<const Vitals*> _vitals;
     AlertLevel _alertLevel;
