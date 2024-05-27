@@ -8,7 +8,11 @@ class PatientFileLoaderAdapter : public AbstractPatientDatabaseLoader {
 private:
     PatientFileLoader* file_loader;
 public:
+    PatientFileLoaderAdapter();
+    ~PatientFileLoaderAdapter();
+    virtual void initialiseConnection() override;
     virtual void loadPatients(std::vector<Patient*>& patientIn) override;
+    virtual void closeConnection() override;
 };
 
 #endif

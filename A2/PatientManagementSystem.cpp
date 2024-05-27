@@ -6,6 +6,8 @@
 
 #include "Patient.h"
 #include "PatientDatabaseLoader.h"
+#include "PatientFileLoader.h"
+#include "PatientFileLoaderAdapter.h"
 #include "Vitals.h"
 
 #include "GPNotificationSystemFacade.h"
@@ -21,16 +23,17 @@ using namespace std;
 
 
 PatientManagementSystem::PatientManagementSystem() :
-    _patientDatabaseLoader(std::make_unique<PatientDatabaseLoader>()),
+    //_patientDatabaseLoader(std::make_unique<PatientDatabaseLoader>()),
+    _patientFileLoaderAdapter(std::make_unique<PatientFileLoaderAdapter>()),
     _hospitalAlertSystem(std::make_unique<HospitalAlertSystemFacade>()),
     _gpNotificationSystem(std::make_unique<GPNotificationSystemFacade>())
 {
-    _patientDatabaseLoader->initialiseConnection();
+//    _patientDatabaseLoader->initialiseConnection();
 }
 
 PatientManagementSystem::~PatientManagementSystem()
 {
-    _patientDatabaseLoader->closeConnection();
+    //_patientDatabaseLoader->closeConnection();
 
     // clear patient memory
     for (Patient* p : _patients) {
@@ -40,7 +43,8 @@ PatientManagementSystem::~PatientManagementSystem()
 
 void PatientManagementSystem::init()
 {
-    _patientDatabaseLoader->loadPatients(_patients);
+    //_patientDatabaseLoader->loadPatients(_patients);
+    _patientFileLoaderAdapter->loadPatients(_patients);
     for (Patient* p : _patients) {
         _patientLookup[p->uid()] = p;
     }
