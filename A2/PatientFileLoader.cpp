@@ -37,10 +37,62 @@ std::vector<Patient*> PatientFileLoader::loadPatientFile()
                 stringList.push_back(destString);
             }
 
-            //start add everythong into Patient
-            for (const auto& s : stringList) {
-                std::cout << "name: " << s << std::endl;
+            //record time
+            std::tm t{ };
+            std::istringstream ssTime(stringList.at(1));
+            ssTime >> std::get_time(&t, "%d-%m-%Y");
+
+            //record name
+            std::string fullname = stringList.at(2);
+            std::istringstream ssFullName(fullname);
+            std::string lastName;
+            std::string firstName;
+            //read firstname first before ','
+            std::getline(ssFullName, firstName, ',');
+            //read lastname
+            std::getline(ssFullName, lastName);
+
+            //create ptr of a new Patient
+            Patient* p = new Patient(firstName, lastName, t);
+
+            //record diease
+            std::string diagnosis = stringList.at(3);
+            std::istringstream ssDiagnosis(diagnosis);
+            std::string destDiagnosis;
+            while (std::getline(ssDiagnosis, destDiagnosis, ','))
+            {
+                p->addDiagnosis(destDiagnosis);
             }
+
+            //record Vitals
+            if (stringList.size() == 5)
+            {
+                std::string vitals = stringList.at(4);
+                std::istringstream ssvitals(vitals);
+                std::string destvital;
+                //for each vital
+                while (std::getline(ssvitals, destvital, ';'))
+                {
+                    // istringstream each vital
+                    std::istringstream ssvital(destvital);
+                    std::string HR, SPO2, BT, BA;
+                    // record HR
+                    std::getline(ssvital, HR, ',');
+                    // record SPO2
+                    std::getline(ssvital, SPO2, ',');
+                    // record BT
+                    std::getline(ssvital, BT, ',');
+                    // record BA
+                    std::getline(ssvital, BA);
+                    Vitals* v = new Vitals(std::stoi(HR), std::stoi(SPO2), std::stoi(BT), std::stoi(BA));
+                    p->addVitals(v);
+                }
+            }
+
+
+            patients.push_back(p);
+            //clear list when finish this line
+            stringList.clear();
         }
         //close file when reach the end
         inFile.close();
