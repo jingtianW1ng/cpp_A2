@@ -18,6 +18,7 @@
 #include "NocapSyndromeCalculateStrategy.h"
 #include "TicctoccBrainDamageCalculateStrategy.h"
 #include "CompositeHighestAlertLevel.h" 
+#include "PatientObserver.h"
 
 using namespace std;
 
@@ -29,6 +30,9 @@ PatientManagementSystem::PatientManagementSystem() :
     _gpNotificationSystem(std::make_unique<GPNotificationSystemFacade>())
 {
 //    _patientDatabaseLoader->initialiseConnection();
+    //add subscribers
+    addSubscribers(_hospitalAlertSystem.get());
+    addSubscribers(_gpNotificationSystem.get());
 }
 
 PatientManagementSystem::~PatientManagementSystem()
@@ -144,6 +148,13 @@ void PatientManagementSystem::addVitalsRecord()
         Vitals* v = new Vitals(heartRate, oxygenSaturation, bodyTemperature, brainActivity);
         _patientLookup[pid]->addVitals(v);
 
+        //call observers when alert level change
+        for (auto& sub : _subscribers)
+        {
+            sub->sendAlertForPatient(_patientLookup[pid]);
+            sub->sendGPNotificationForPatient(_patientLookup[pid]);
+        }
+
     }
     else {
         cout << "Patient not found" << endl;
@@ -170,4 +181,9 @@ void PatientManagementSystem::printPatients() const
     for (Patient* p : _patients) {
         std::cout << *p << std::endl;
     }
+}
+
+void PatientManagementSystem::addSubscribers(PatientObserver* patientObserver)
+{
+    _subscribers.push_back(patientObserver);
 }

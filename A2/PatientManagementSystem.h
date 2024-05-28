@@ -5,7 +5,6 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include "PatientObserver.h"
 
 
 // forward declare several classes
@@ -13,6 +12,7 @@ class AbstractPatientDatabaseLoader;
 class HospitalAlertSystemFacade;
 class GPNotificationSystemFacade;
 class Patient;
+class PatientObserver;
 
 
 class PatientManagementSystem
@@ -32,8 +32,10 @@ public:
     void printWelcomeMessage() const;
     void printMainMenu() const;
     void printPatients() const;
+    void addSubscribers(PatientObserver* patientObserver);
 
 protected:
+    std::vector<PatientObserver*> _subscribers;
     std::vector<Patient*> _patients;
     std::map<std::string, Patient*> _patientLookup;
 
