@@ -202,7 +202,7 @@ Adapter pattern</panel_attributes>
     </coordinates>
     <panel_attributes>PatientFileLoaderAdapter
 --
-
+-file_loader:PatientFileLoader*
 --
 +loadPatients(patientIn:list&lt;Patirnt*&gt;):void
 

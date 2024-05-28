@@ -5,6 +5,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include "PatientObserver.h"
 
 
 // forward declare several classes
@@ -14,7 +15,7 @@ class GPNotificationSystemFacade;
 class Patient;
 
 
-class PatientManagementSystem
+class PatientManagementSystem : public PatientObserver
 {
 public:
 
@@ -26,7 +27,7 @@ public:
     void run();
 
     // ask the user for a patient and vitals and add those vitals to the patient
-    void addVitalsRecord();
+    virtual void addVitalsRecord() override;
 
     void printWelcomeMessage() const;
     void printMainMenu() const;
