@@ -2,15 +2,16 @@
 #define HOSPITAL_ALERT_SYSTEM_FACADE_H
 
 #include "Patient.h"
+#include "PatientObserver.h"
 
 
-class HospitalAlertSystemFacade
+class HospitalAlertSystemFacade : public PatientObserver
 {
 public:
     HospitalAlertSystemFacade();
     virtual ~HospitalAlertSystemFacade();
 
-    void sendAlertForPatient(Patient* p);
+    virtual void sendAlertForPatient(Patient* p) override;
 
 };
 

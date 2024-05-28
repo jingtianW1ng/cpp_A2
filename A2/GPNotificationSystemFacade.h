@@ -2,14 +2,15 @@
 #define GP_NOTIFICATION_SYSTEM_FACADE_H
 
 #include "Patient.h"
+#include "PatientObserver.h"
 
 
-class GPNotificationSystemFacade {
+class GPNotificationSystemFacade : public PatientObserver {
 public:
     GPNotificationSystemFacade();
     virtual ~GPNotificationSystemFacade();
 
-    void sendGPNotificationForPatient(Patient* p);
+    virtual void sendGPNotificationForPatient(Patient* p) override;
 };
 
 #endif

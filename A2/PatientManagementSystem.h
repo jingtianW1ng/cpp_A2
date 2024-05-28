@@ -15,7 +15,7 @@ class GPNotificationSystemFacade;
 class Patient;
 
 
-class PatientManagementSystem : public PatientObserver
+class PatientManagementSystem
 {
 public:
 
@@ -27,7 +27,7 @@ public:
     void run();
 
     // ask the user for a patient and vitals and add those vitals to the patient
-    virtual void addVitalsRecord() override;
+    void addVitalsRecord();
 
     void printWelcomeMessage() const;
     void printMainMenu() const;
