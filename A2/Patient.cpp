@@ -127,3 +127,8 @@ void Patient::setCompositeStrategy(CalculateAlertLevelStrategy* s)
 {
     _Strategy = s;
 }
+
+void Patient::addSubscribers(PatientObserver* patientObserver)
+{
+    _subscribers.push_back(patientObserver);
+}

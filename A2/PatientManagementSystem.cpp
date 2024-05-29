@@ -30,9 +30,6 @@ PatientManagementSystem::PatientManagementSystem() :
     _gpNotificationSystem(std::make_unique<GPNotificationSystemFacade>())
 {
 //    _patientDatabaseLoader->initialiseConnection();
-    //add subscribers
-    addSubscribers(_hospitalAlertSystem.get());
-    addSubscribers(_gpNotificationSystem.get());
 }
 
 PatientManagementSystem::~PatientManagementSystem()
@@ -55,6 +52,8 @@ void PatientManagementSystem::init()
 
     for (Patient* p : _patients) {
         // TODO: do any processing you need here
+        p->addSubscribers(_hospitalAlertSystem.get());
+        p->addSubscribers(_gpNotificationSystem.get());
     }
 }
 
@@ -149,7 +148,7 @@ void PatientManagementSystem::addVitalsRecord()
         _patientLookup[pid]->addVitals(v);
 
         //call observers when alert level change
-        for (auto& sub : _subscribers)
+        for (auto& sub : _patientLookup[pid]->_subscribers)
         {
             sub->sendAlertForPatient(_patientLookup[pid]);
             sub->sendGPNotificationForPatient(_patientLookup[pid]);
@@ -181,9 +180,4 @@ void PatientManagementSystem::printPatients() const
     for (Patient* p : _patients) {
         std::cout << *p << std::endl;
     }
-}
-
-void PatientManagementSystem::addSubscribers(PatientObserver* patientObserver)
-{
-    _subscribers.push_back(patientObserver);
 }

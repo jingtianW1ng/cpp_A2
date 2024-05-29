@@ -8,6 +8,7 @@
 #include <memory>
 
 #include "PatientAlertLevels.h"
+#include "PatientObserver.h"
 
 class Vitals;
 
@@ -54,6 +55,9 @@ public:
     void calculateAlertLevel(const Vitals*);
 
     void setCompositeStrategy(CalculateAlertLevelStrategy* s);
+    std::vector<PatientObserver*> _subscribers;
+    void addSubscribers(PatientObserver* patientObserver);
+
 
 protected:
     CalculateAlertLevelStrategy* _Strategy;

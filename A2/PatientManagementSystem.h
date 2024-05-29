@@ -32,10 +32,8 @@ public:
     void printWelcomeMessage() const;
     void printMainMenu() const;
     void printPatients() const;
-    void addSubscribers(PatientObserver* patientObserver);
 
 protected:
-    std::vector<PatientObserver*> _subscribers;
     std::vector<Patient*> _patients;
     std::map<std::string, Patient*> _patientLookup;
 
