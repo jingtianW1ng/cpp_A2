@@ -2,9 +2,8 @@
 #include <filesystem>
 
 
-PatientFileLoaderAdapter::PatientFileLoaderAdapter()
+PatientFileLoaderAdapter::PatientFileLoaderAdapter(PatientFileLoader* file_loader) : file_loader(file_loader)
 {
-    file_loader = new PatientFileLoader("patients.txt");
 }
 
 PatientFileLoaderAdapter::~PatientFileLoaderAdapter()
