@@ -17,6 +17,8 @@ add_executable (A2
     "Vitals.cpp" "Vitals.h"
  "CalculateAlertLevelStrategy.h" "AmogusSusCalculateStrategy.h" "AmogusSusCalculateStrategy.cpp" "ERushCalculateStrategy.h" "ERushCalculateStrategy.cpp" "NocapSyndromeCalculateStrategy.h" "NocapSyndromeCalculateStrategy.cpp" "TicctoccBrainDamageCalculateStrategy.h" "TicctoccBrainDamageCalculateStrategy.cpp" "CompositeHighestAlertLevel.h" "CompositeHighestAlertLevel.cpp" "PatientFileLoaderAdapter.h" "PatientFileLoaderAdapter.cpp" "PatientObserver.h")
 
+ configure_file(patients.txt patients.txt COPYONLY)
+
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET A2 PROPERTY CXX_STANDARD 20)
 endif()

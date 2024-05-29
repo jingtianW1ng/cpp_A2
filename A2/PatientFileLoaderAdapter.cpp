@@ -4,7 +4,7 @@
 
 PatientFileLoaderAdapter::PatientFileLoaderAdapter()
 {
-    file_loader = new PatientFileLoader("D:\\2024_allCourse\\C++_work\\A2\\A2\\patients.txt");
+    file_loader = new PatientFileLoader("patients.txt");
 }
 
 PatientFileLoaderAdapter::~PatientFileLoaderAdapter()
