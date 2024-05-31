@@ -123,7 +123,7 @@ void Patient::calculateAlertLevel(const Vitals* v)
     _Strategy->calculateAlertLevel(v, this);
 }
 
-void Patient::setCompositeStrategy(CalculateAlertLevelStrategy* s)
+void Patient::setStrategy(CalculateAlertLevelStrategy* s)
 {
     _Strategy = s;
 }

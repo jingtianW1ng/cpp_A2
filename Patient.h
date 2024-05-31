@@ -54,7 +54,7 @@ public:
 
     void calculateAlertLevel(const Vitals*);
 
-    void setCompositeStrategy(CalculateAlertLevelStrategy* s);
+    void setStrategy(CalculateAlertLevelStrategy* s);
     std::vector<PatientObserver*> _subscribers;
     void addSubscribers(PatientObserver* patientObserver);
 

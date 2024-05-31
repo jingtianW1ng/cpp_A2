@@ -141,7 +141,7 @@ void PatientManagementSystem::addVitalsRecord()
                 cout << "TicctoccBrainDamage" << endl;
             }
         }
-        _patientLookup[pid]->setCompositeStrategy(compStrat);
+        _patientLookup[pid]->setStrategy(compStrat);
 
         Vitals* v = new Vitals(heartRate, oxygenSaturation, bodyTemperature, brainActivity);
         _patientLookup[pid]->addVitals(v);
