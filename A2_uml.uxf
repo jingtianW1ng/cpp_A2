@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1370</x>
-      <y>290</y>
-      <w>210</w>
-      <h>140</h>
+      <x>1134</x>
+      <y>189</y>
+      <w>147</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Person
 --
@@ -22,10 +22,10 @@ lastName:string, birthday:tm)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1310</x>
-      <y>470</y>
-      <w>430</w>
-      <h>360</h>
+      <x>1057</x>
+      <y>315</y>
+      <w>301</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>Patient
 --
@@ -56,10 +56,10 @@ lastName:string, birthday:tm)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1460</x>
-      <y>420</y>
-      <w>30</w>
-      <h>70</h>
+      <x>1197</x>
+      <y>280</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -67,10 +67,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1350</x>
-      <y>890</y>
-      <w>240</w>
-      <h>200</h>
+      <x>1120</x>
+      <y>623</y>
+      <w>168</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>Vitals
 --
@@ -90,10 +90,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>480</y>
-      <w>460</w>
-      <h>250</h>
+      <x>630</x>
+      <y>322</y>
+      <w>322</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>PatientManagementSystem
 --
@@ -117,10 +117,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>550</y>
-      <w>280</w>
-      <h>100</h>
+      <x>336</x>
+      <y>371</y>
+      <w>196</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>AbstractPatientDatabaseLoader
 --
@@ -136,10 +136,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
-      <y>750</y>
-      <w>280</w>
-      <h>120</h>
+      <x>427</x>
+      <y>511</y>
+      <w>196</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>PatientDatabaseLoader
 --
@@ -154,10 +154,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>1110</y>
-      <w>260</w>
-      <h>90</h>
+      <x>560</x>
+      <y>763</y>
+      <w>182</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>HosptialNotificationSystemFacade
 --
@@ -170,10 +170,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>990</x>
-      <y>1110</y>
-      <w>300</w>
-      <h>90</h>
+      <x>833</x>
+      <y>763</y>
+      <w>210</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>GPNotificationSystemFacade
 --
@@ -186,10 +186,10 @@ lastName:string, birthday:tm)
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>130</x>
-      <y>550</y>
-      <w>140</w>
-      <h>70</h>
+      <x>56</x>
+      <y>525</y>
+      <w>98</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>FR3
 Adapter pattern</panel_attributes>
@@ -198,10 +198,10 @@ Adapter pattern</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>750</y>
-      <w>370</w>
-      <h>120</h>
+      <x>161</x>
+      <y>511</y>
+      <w>259</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>PatientFileLoaderAdapter
 --
@@ -216,21 +216,23 @@ Adapter pattern</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1150</x>
-      <y>580</y>
-      <w>180</w>
-      <h>30</h>
+      <x>945</x>
+      <y>392</y>
+      <w>126</w>
+      <h>28</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
     <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>580</y>
-      <w>170</w>
-      <h>30</h>
+      <x>525</x>
+      <y>392</y>
+      <w>119</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
@@ -238,34 +240,34 @@ Adapter pattern</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>920</x>
-      <y>720</y>
-      <w>30</w>
-      <h>120</h>
+      <x>784</x>
+      <y>490</y>
+      <w>21</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1460</x>
-      <y>820</y>
-      <w>50</w>
-      <h>90</h>
+      <x>1197</x>
+      <y>560</y>
+      <w>35</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>640</y>
-      <w>220</w>
-      <h>130</h>
+      <x>280</x>
+      <y>434</y>
+      <w>154</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>200.0;10.0;200.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
@@ -273,10 +275,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
-      <y>640</y>
-      <w>180</w>
-      <h>130</h>
+      <x>413</x>
+      <y>434</y>
+      <w>126</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;160.0;70.0;160.0;110.0</additional_attributes>
@@ -284,10 +286,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>600</x>
-      <y>1000</y>
-      <w>150</w>
-      <h>70</h>
+      <x>903</x>
+      <y>602</y>
+      <w>105</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>FR4
 Observer pattern</panel_attributes>
@@ -296,10 +298,10 @@ Observer pattern</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1080</x>
-      <y>310</y>
-      <w>140</w>
-      <h>70</h>
+      <x>882</x>
+      <y>210</y>
+      <w>98</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>FR1
 Strategy pattern</panel_attributes>
@@ -308,24 +310,23 @@ Strategy pattern</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>210</x>
-      <y>0</y>
-      <w>230</w>
-      <h>120</h>
+      <x>203</x>
+      <y>28</y>
+      <w>119</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>FR2
 Compositve pattern
-
-遍历Strategys找出最高的alert level</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>820</y>
-      <w>300</w>
-      <h>190</h>
+      <x>686</x>
+      <y>553</y>
+      <w>210</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>PatientObserver
 --
@@ -338,10 +339,10 @@ Compositve pattern
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>130</y>
-      <w>370</w>
-      <h>120</h>
+      <x>203</x>
+      <y>77</y>
+      <w>259</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>CompositeHighestAlertLevel
 --
@@ -354,32 +355,32 @@ Compositve pattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
-      <y>1000</y>
-      <w>220</w>
-      <h>130</h>
+      <x>651</x>
+      <y>679</y>
+      <w>154</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>200.0;10.0;200.0;80.0;10.0;80.0;10.0;110.0</additional_attributes>
+    <additional_attributes>200.0;10.0;200.0;90.0;10.0;90.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>920</x>
-      <y>1000</y>
-      <w>230</w>
-      <h>130</h>
+      <x>784</x>
+      <y>679</y>
+      <w>161</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0;210.0;80.0;210.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;210.0;90.0;210.0;120.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>300</y>
-      <w>230</w>
-      <h>90</h>
+      <x>714</x>
+      <y>196</y>
+      <w>161</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 CalcualteAlertLevelStrategy
@@ -393,10 +394,10 @@ CalcualteAlertLevelStrategy
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1450</x>
-      <y>160</y>
-      <w>320</w>
-      <h>90</h>
+      <x>1155</x>
+      <y>98</y>
+      <w>224</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>AmogusSusCalculateStrategy
 --
@@ -409,10 +410,10 @@ CalcualteAlertLevelStrategy
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1130</x>
-      <y>160</y>
-      <w>300</w>
-      <h>90</h>
+      <x>931</x>
+      <y>98</y>
+      <w>210</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>ERushCalculateStrategy
 --
@@ -425,10 +426,10 @@ CalcualteAlertLevelStrategy
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>160</y>
-      <w>300</w>
-      <h>90</h>
+      <x>707</x>
+      <y>98</y>
+      <w>210</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>NocapSyndromeCalculateStrategy
 --
@@ -441,10 +442,10 @@ CalcualteAlertLevelStrategy
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>160</y>
-      <w>300</w>
-      <h>90</h>
+      <x>483</x>
+      <y>98</y>
+      <w>210</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>TicctoccBrainDamageCalculateStrategy
 --
@@ -455,53 +456,12 @@ CalcualteAlertLevelStrategy
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>3020</x>
-      <y>230</y>
-      <w>320</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>Disease
---
--_name:string
--_strategy:AbstractCalcualteAlertLevelStrategy*
---
-+Disease(name:string, 
-strategy:AbstractCalcualteAlertLevelStrategy*)
-+calculateAlertLevel():string
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>920</x>
-      <y>390</y>
-      <w>30</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>920</x>
-      <y>380</y>
-      <w>30</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>920</x>
-      <y>240</y>
-      <w>30</w>
-      <h>80</h>
+      <x>784</x>
+      <y>154</y>
+      <w>21</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
@@ -509,10 +469,10 @@ strategy:AbstractCalcualteAlertLevelStrategy*)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>920</x>
-      <y>240</y>
-      <w>350</w>
-      <h>80</h>
+      <x>784</x>
+      <y>154</y>
+      <w>245</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;30.0;330.0;30.0;330.0;10.0</additional_attributes>
@@ -520,10 +480,10 @@ strategy:AbstractCalcualteAlertLevelStrategy*)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>920</x>
-      <y>240</y>
-      <w>670</w>
-      <h>80</h>
+      <x>784</x>
+      <y>154</y>
+      <w>469</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;30.0;650.0;30.0;650.0;10.0</additional_attributes>
@@ -531,10 +491,10 @@ strategy:AbstractCalcualteAlertLevelStrategy*)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>240</y>
-      <w>330</w>
-      <h>80</h>
+      <x>574</x>
+      <y>154</y>
+      <w>231</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>310.0;60.0;310.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
@@ -542,21 +502,21 @@ strategy:AbstractCalcualteAlertLevelStrategy*)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>240</y>
-      <w>700</w>
-      <h>80</h>
+      <x>329</x>
+      <y>154</y>
+      <w>476</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>680.0;60.0;680.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
+    <additional_attributes>660.0;60.0;660.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>940</y>
-      <w>270</w>
-      <h>120</h>
+      <x>196</x>
+      <y>623</y>
+      <w>189</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>PatientFileLoader
 --
@@ -570,12 +530,25 @@ strategy:AbstractCalcualteAlertLevelStrategy*)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>860</y>
-      <w>30</w>
-      <h>100</h>
+      <x>280</x>
+      <y>588</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>252</y>
+      <w>35</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..4</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
