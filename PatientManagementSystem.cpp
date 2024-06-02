@@ -120,25 +120,21 @@ void PatientManagementSystem::addVitalsRecord()
             {
                 auto strat = new AmogusSusCalculateStrategy();
                 compStrat->addStrategy(strat);
-                cout << "AmogusSus" << endl;
             }
             else if (disease == "ERush")
             {
                 auto strat = new ERushCalculateStrategy();
                 compStrat->addStrategy(strat);
-                cout << "ERush" << endl;
             }
             else if (disease == "NocapSyndrome")
             {
                 auto strat = new NocapSyndromeCalculateStrategy();
                 compStrat->addStrategy(strat);
-                cout << "NocapSyndrome" << endl;
             }
             else if (disease == "TicctoccBrainDamage")
             {
                 auto strat = new TicctoccBrainDamageCalculateStrategy();
                 compStrat->addStrategy(strat);
-                cout << "TicctoccBrainDamage" << endl;
             }
         }
         _patientLookup[pid]->setStrategy(compStrat);
